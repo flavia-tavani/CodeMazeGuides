@@ -169,5 +169,77 @@ namespace Tests
 
             Assert.Equal(expected, sw.ToString());
         }
+
+        [Fact]
+        public void WhenCompareTwoCarsWithSameModelUsingOverload_ThenTheyAreEquals()
+        {
+            var otherCar = new Car()
+            {
+                Model = "Fiesta"
+            };
+
+            bool result = _car.Equals(otherCar);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void WhenCompareTwoCarsWithSameModel_ThenTheyAreNotEquals()
+        {
+            var otherCar = new Car()
+            {
+                Model = "Fiesta"
+            };
+
+            bool result = _car != otherCar;
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void WhenCompareTwoRecordCarsWithSameModelUsingOverload_ThenTheyAreEquals()
+        {
+            var car = new RecordCar()
+            {
+                Model = "Fiesta",
+                SerialNumber = 3,
+                VehicleBrand = Brand.Ford
+            };
+
+            var otherCar = new RecordCar()
+            {
+                Model = "Fiesta",
+                SerialNumber = 4,
+                VehicleBrand = Brand.Ford
+            };
+
+            bool result = car.Equals(otherCar);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void WhenCompareTwoRecordCarsWithSameModel_ThenTheyAreEquals()
+        {
+            var car = new RecordCar()
+            {
+                Model = "Fiesta",
+                SerialNumber = 3,
+                VehicleBrand = Brand.Ford
+            };
+
+            var otherCar = new RecordCar()
+            {
+                Model = "Fiesta",
+                SerialNumber = 4,
+                VehicleBrand = Brand.Ford
+            };
+
+            bool result = car != otherCar;
+
+            Assert.False(result);
+        }
+
+
     }
 }

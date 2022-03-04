@@ -39,3 +39,31 @@ comparer.AnotherModelComparerUsingIsNot(car);
 comparer.CarTypeComparerUsingNotEqual(car);
 
 comparer.CarTypeComparerUsingIsNot(car);
+
+var otherVehicle = new Car()
+{
+    SerialNumber = 1001,
+    VehicleBrand = Brand.Ford,
+    Model = "Fiesta"
+};
+
+Console.WriteLine(car != otherVehicle);
+Console.WriteLine(!car.Equals(otherVehicle));
+
+
+var recordVehicle = new RecordCar()
+{
+    SerialNumber = 1001,
+    VehicleBrand = Brand.Ford,
+    Model = "Fiesta"
+};
+
+var otherRecordVehicle = new RecordCar()
+{
+    SerialNumber = 1001,
+    VehicleBrand = Brand.Ford,
+    Model = "Fiesta"
+};
+
+Console.WriteLine(recordVehicle != otherRecordVehicle);
+Console.WriteLine(!recordVehicle.Equals(otherRecordVehicle));

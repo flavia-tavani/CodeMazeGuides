@@ -118,5 +118,13 @@
                 Console.WriteLine("model is not Focus"); 
             } 
         }
+
+        public void ModelComparerWithNull(Car car)
+        {
+            if (car.Model is not null)
+            {
+                Console.WriteLine("model is not null");
+            }
+        }
     }
 }
